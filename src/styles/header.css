@@ -5,6 +5,8 @@ header {
   width: 100%;
   padding: 0 119px 0 119px;
   background-color: #ede6d3;
+  border: 1px solid rgba(125, 83, 43, 0.295);
+  box-shadow: 0 12px 10px -5px #7d532b;
 }
 /* Logo */
 header .app-logo {
@@ -54,7 +56,7 @@ header .app-logo {
   font-size: 36px;
   background-color: transparent;
   cursor: pointer;
-  transition: transform 0.3s, filter 0.3s;
+  transition: transform 0.2s, filter 0.2s;
   box-shadow: 0 0px 5px -6px rgba(0, 0, 0, 0);
 }
 button.tea {
@@ -64,6 +66,10 @@ button.tea {
 .header-button:hover {
   transform: translateY(-2px);
   filter: drop-shadow(0 6px 3px #7d532ba6);
+}
+.header-button:active {
+  transform: translateY(2px);
+  filter: drop-shadow(0 6px 3px #7d532b00);
 }
 /* Shopping cart icon */
 .cart {
@@ -85,9 +91,13 @@ button.tea {
   padding-top: 7px;
   padding-right: 9px;
   cursor: pointer;
-  transition: transform 0.3s, filter 0.3s;
+  transition: transform 0.2s, filter 0.2s;
 }
 .cart:hover {
   transform: translateY(-2px);
   filter: drop-shadow(0 6px 3px #7d532b79);
+}
+.cart:active {
+  transform: translateY(2px);
+  filter: drop-shadow(0 6px 3px #7d532b00);
 }
