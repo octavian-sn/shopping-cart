@@ -1,6 +1,4 @@
-# Shopping Cart - Project
-
-## Shopping Cart
+# Shopping Cart - EterniTea
 
 ### Designed in [Figma](https://www.figma.com/file/idntchOmCrNcJqoa4Z146r/E-commerce?node-id=1%3A3)
 
