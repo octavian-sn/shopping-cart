@@ -1,0 +1,20 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  color: #7d532b;
+  font-family: 'Parisienne';
+  font-size: 36px;
+  text-align: justify;
+}
+.home-page p:nth-child(1) {
+  width: 857px;
+  margin-top: 51px;
+}
+.home-page p:nth-child(2) {
+  margin-right: -260px;
+}
+.home-page button {
+  margin-left: 800px;
+}
