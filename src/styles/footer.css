@@ -27,7 +27,7 @@ footer {
 .column {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   letter-spacing: 0.15em;
   color: #7d532b;
   max-height: 161px;

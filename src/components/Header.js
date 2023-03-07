@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/tea/logo.png';
 import '../styles/header.css';
+import { ContextProvider } from '../Context';
+import { useContext } from 'react';
 
 function Header(props) {
+  // const test = useContext(ContextProvider);
+
   return (
     <header className="header">
       <img src={logo} className="app-logo" alt="logo"></img>
