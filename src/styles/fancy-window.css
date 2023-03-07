@@ -24,7 +24,7 @@
 /* 'Big' size for 'home' and 'tea' pages */
 .fancy-window.big .border {
   width: 1159px;
-  height: 24px;
+  height: 20px;
 }
 .fancy-window.big .content {
   width: 1247px;
@@ -35,7 +35,7 @@
 
 .fancy-window.small .border {
   width: 510px;
-  height: 20px;
+  height: 18px;
 }
 .fancy-window.small .content {
   width: 572px;

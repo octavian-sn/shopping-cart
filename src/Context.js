@@ -1,15 +1,15 @@
 import { createContext, useState, useEffect } from 'react';
-import data from './assets/items';
+import teaData from './assets/items';
 
 const Context = createContext();
 
 function ContextProvider({ children }) {
-  const [items, setItems] = useState([]);
+  const [data, setItems] = useState([]);
   useEffect(() => {
-    setItems(data);
+    setItems(teaData);
   }, []);
 
-  return <Context.Provider value={{ items }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ data }}>{children}</Context.Provider>;
 }
 
 export { Context, ContextProvider };

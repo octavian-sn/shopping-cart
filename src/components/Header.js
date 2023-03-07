@@ -8,7 +8,9 @@ import { useContext } from 'react';
 function Header(props) {
   return (
     <header className="header">
-      <img src={logo} className="app-logo" alt="logo"></img>
+      <Link to="/">
+        <img src={logo} className="app-logo" alt="logo"></img>
+      </Link>
       <div className="search-bar">
         <div className="upper margin"></div>
         <input className="custom-window--body" placeholder="Search"></input>
