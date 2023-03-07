@@ -4,6 +4,7 @@ import twitter from '../assets/twitter.png';
 import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
 import '../styles/footer.css';
+import Credits from './Credits';
 
 function Footer() {
   return (
@@ -44,7 +45,7 @@ function Footer() {
           <li>Consumer rights and complaints</li>
         </ul>
       </div>
-      <div className="credits"></div>
+      <Credits />
     </footer>
   );
 }

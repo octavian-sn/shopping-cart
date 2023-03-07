@@ -1,13 +1,8 @@
 import React from 'react';
-import Credits from './Credits';
 import '../styles/content.css';
 
 function Content() {
-  return (
-    <div id="content">
-      <Credits />
-    </div>
-  );
+  return <div id="content"></div>;
 }
 
 export default Content;
