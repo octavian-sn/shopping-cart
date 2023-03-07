@@ -16,7 +16,6 @@
   left: 0;
   opacity: 0.87;
 }
-.overlay {
-  height: 100%;
-  width: 100%;
+#content * {
+  position: relative;
 }

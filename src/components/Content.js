@@ -1,10 +1,11 @@
 import React from 'react';
+import Credits from './Credits';
 import '../styles/content.css';
 
 function Content() {
   return (
     <div id="content">
-      <div className="overlay"></div>
+      <Credits />
     </div>
   );
 }
