@@ -9,8 +9,7 @@ function ContextProvider({ children }) {
     setItems(data);
   }, []);
 
-  console.log(items);
-  return <Context.Provider value={items}>{children}</Context.Provider>;
+  return <Context.Provider value={{ items }}>{children}</Context.Provider>;
 }
 
 export { Context, ContextProvider };

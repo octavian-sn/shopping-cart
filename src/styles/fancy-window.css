@@ -1,0 +1,43 @@
+.fancy-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Decorating Borders */
+.fancy-window .border {
+  background-color: rgba(237, 230, 211, 0.78);
+  border: 1px solid rgba(125, 83, 43, 0.52);
+}
+.fancy-window .upper {
+  border-bottom: none;
+}
+.fancy-window .lower {
+  border-top: none;
+}
+/* Content window */
+.fancy-window .content {
+  background-color: rgba(244, 243, 237, 0.87);
+  border: 1px solid rgba(125, 83, 43, 0.52);
+}
+
+/* 'Big' size for 'home' and 'tea' pages */
+.fancy-window.big .border {
+  width: 1159px;
+  height: 24px;
+}
+.fancy-window.big .content {
+  width: 1247px;
+  min-height: 381px;
+}
+
+/* 'Small' size for single item popup */
+
+.fancy-window.small .border {
+  width: 510px;
+  height: 20px;
+}
+.fancy-window.small .content {
+  width: 572px;
+  min-height: 305px;
+}

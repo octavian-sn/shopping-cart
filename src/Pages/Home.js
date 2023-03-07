@@ -1,10 +1,13 @@
 import React from 'react';
+import FancyWindow from '../components/FancyWindow';
 
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <>
+      <FancyWindow size="big">
+        <div className="home-page"></div>
+      </FancyWindow>
+    </>
   );
 }
 
