@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import React from 'react';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
 import './styles/app.css';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Content />
       <Footer />
+      {/* <Cart /> */}
     </div>
   );
 }

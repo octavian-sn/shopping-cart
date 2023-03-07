@@ -5,7 +5,7 @@ import '../styles/header.css';
 
 function Header(props) {
   return (
-    <header>
+    <header className="header">
       <img src={logo} className="app-logo" alt="logo"></img>
       <div className="search-bar">
         <div className="upper margin"></div>
