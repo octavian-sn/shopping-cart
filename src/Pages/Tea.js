@@ -28,6 +28,7 @@ function Tea() {
           </div>
           <div className="cards">
             <TeaCard data={data[0]} />
+            {/* <TeaCard data={data[0]} />
             <TeaCard data={data[0]} />
             <TeaCard data={data[0]} />
             <TeaCard data={data[0]} />
@@ -36,8 +37,7 @@ function Tea() {
             <TeaCard data={data[0]} />
             <TeaCard data={data[0]} />
             <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} /> */}
           </div>
         </div>
       </FancyWindow>

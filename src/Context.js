@@ -9,6 +9,8 @@ function ContextProvider({ children }) {
     setItems(teaData);
   }, []);
 
+  const [cart, setCart] = useState([]);
+
   return <Context.Provider value={{ data }}>{children}</Context.Provider>;
 }
 

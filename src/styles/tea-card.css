@@ -8,7 +8,7 @@
 }
 .tea-card:hover {
   box-shadow: 0 3px 8px 2px #a5a3a1;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 /* Image side with title and favorite button */
 .tea-card .image {
@@ -36,4 +36,34 @@
   background-color: transparent;
   cursor: pointer;
   transition: opacity 350ms;
+}
+/* Information side with details and add button */
+.tea-card .information {
+  padding: 4px 12px;
+  font-family: 'Roboto';
+  letter-spacing: 0.15em;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+}
+.tea-card .information p:nth-child(2) {
+  margin-top: 4px;
+  font-weight: 900;
+  font-size: 15px;
+}
+.tea-card .information button {
+  color: #7d532b;
+  margin-top: 6px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: color 150ms;
+}
+.tea-card .information button:active {
+  color: #7d532ba2;
 }

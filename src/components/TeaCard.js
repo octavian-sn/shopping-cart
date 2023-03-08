@@ -28,6 +28,11 @@ function TeaCard({
           ></button>
         )}
       </div>
+      <div className="information">
+        <p>{`${name} - ${category} tea leaves (100 gr)`}</p>
+        <p>{`${price} €`}</p>
+        <button>Add to cart</button>
+      </div>
     </div>
   );
 }
