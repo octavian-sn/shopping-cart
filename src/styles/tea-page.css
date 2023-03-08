@@ -6,7 +6,7 @@
   color: #7d532b;
 }
 /* All buttons (tea types + sorting) */
-.tea-page button {
+.tea-page button.sort {
   border: none;
   color: #7d532b;
   font-family: 'Roboto';
@@ -18,12 +18,12 @@
   transition: transform 0.2s, filter 0.2s;
   filter: drop-shadow(0 3px 2px #7d532b00);
 }
-.tea-page button:hover {
+.tea-page button.sort:hover {
   transform: translateY(-1px);
   filter: drop-shadow(0 3px 2px #7d532ba6);
   font-weight: 700;
 }
-.tea-page button:active {
+.tea-page button.sort:active {
   transform: translateY(1px);
   filter: drop-shadow(0 3px 2px #7d532b00);
 }
@@ -65,5 +65,7 @@
 .tea-page .cards {
   grid-column: 2 / 3;
   width: 1042px;
-  height: 200px;
+  padding: 37px 78.57px 37px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }

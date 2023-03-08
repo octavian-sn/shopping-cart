@@ -27,6 +27,7 @@ const items = [
   {
     name: "Nature's Absinth",
     category: 'green',
+    price: 110.5,
     id: 'green0',
     description:
       'This blend of green tea and elderberries will transport you to a magical forest filled with fairies and unicorns.',
@@ -36,6 +37,7 @@ const items = [
   {
     name: 'Sweet Dreams',
     category: 'green',
+    price: 105.2,
     id: 'green1',
     description:
       'This soothing blend of green tea and chamomile will help you relax and drift off to sleep peacefully.',
@@ -45,6 +47,7 @@ const items = [
   {
     name: 'Emerald Isle',
     category: 'green',
+    price: 100.1,
     id: 'green2',
     description:
       'A green tea blend inspired by the lush, verdant landscapes of Ireland, with notes of Irish moss and wildflowers.',
@@ -54,6 +57,7 @@ const items = [
   {
     name: 'Mystic Moon',
     category: 'green',
+    price: 99.9,
     id: 'green3',
     description:
       'A tropical green tea infused with the sweet, juicy flavor of ripe mangoes.',
@@ -63,6 +67,7 @@ const items = [
   {
     name: 'Fire Blood',
     category: 'black',
+    price: 90.99,
     id: 'black0',
     description:
       'Start your day off right with this invigorating black tea blend, infused with hints of citrus and ginger.',
@@ -72,6 +77,7 @@ const items = [
   {
     name: 'Berry Blast',
     category: 'black',
+    price: 75.5,
     id: 'black1',
     description:
       "A refreshing blend of black tea and mixed berries that's bursting with flavor.",
@@ -81,6 +87,7 @@ const items = [
   {
     name: 'Chocolate Indulgence',
     category: 'black',
+    price: 50.5,
     id: 'black2',
     description:
       'A decadent black tea infused with the rich, indulgent taste of chocolate.',
@@ -90,6 +97,7 @@ const items = [
   {
     name: 'Lemon Twist',
     category: 'black',
+    price: 44.9,
     id: 'black3',
     description:
       'A refreshing black tea infused with the tangy, zesty flavor of lemon.',
@@ -97,8 +105,9 @@ const items = [
     favorite: false,
   },
   {
-    name: 'Ginger Spice',
+    name: 'Fairy Made',
     category: 'white',
+    price: 80.5,
     id: 'white0',
     description:
       'This spicy white tea is infused with the warming flavors of ginger and cinnamon.',
@@ -108,6 +117,7 @@ const items = [
   {
     name: 'Winter Wonderland',
     category: 'white',
+    price: 60.1,
     id: 'white1',
     description:
       'Embrace the chill of winter with this cozy blend of white tea, cinnamon, and cloves.',
@@ -115,8 +125,9 @@ const items = [
     favorite: false,
   },
   {
-    name: 'Vanilla Bean',
+    name: 'Ginger Spice',
     category: 'white',
+    price: 34.2,
     id: 'white2',
     description:
       'This smooth and creamy white tea is infused with the sweet, comforting flavor of vanilla.',
@@ -126,6 +137,7 @@ const items = [
   {
     name: 'Golden Sunset',
     category: 'white',
+    price: 32.0,
     id: 'white3',
     description:
       'A soothing white tea blend infused with the warm, comforting flavors of chamomile and honey.',
@@ -135,6 +147,7 @@ const items = [
   {
     name: 'Blueberry Bliss',
     category: 'dark',
+    price: 54.9,
     id: 'dark0',
     description:
       'A fruity dark tea infused with the sweet, juicy flavor of fresh blueberries.',
@@ -144,6 +157,7 @@ const items = [
   {
     name: 'Lavender Fields',
     category: 'dark',
+    price: 29.9,
     id: 'dark1',
     description:
       'A calming herbal tea infused with the soothing fragrance of lavender, perfect for relaxation and stress relief.',
@@ -153,6 +167,7 @@ const items = [
   {
     name: 'Peachy Keen',
     category: 'dark',
+    price: 75.4,
     id: 'dark2',
     description:
       'This fruity dark tea is infused with the delicious taste of juicy peaches.',
@@ -162,6 +177,7 @@ const items = [
   {
     name: 'Spiced Apple Pie',
     category: 'dark',
+    price: 42.3,
     id: 'dark3',
     description:
       'The perfect tea to enjoy on a crisp fall day, this dark tea is infused with the warm flavors of cinnamon, nutmeg, and apple.',
@@ -171,6 +187,7 @@ const items = [
   {
     name: 'Citrus Burst',
     category: 'yellow',
+    price: 29.1,
     id: 'yellow0',
     description:
       'A zingy yellow tea infused with the bright, refreshing flavors of lemon and lime.',
@@ -180,6 +197,7 @@ const items = [
   {
     name: 'Tropical Tango',
     category: 'yellow',
+    price: 55.1,
     id: 'yellow1',
     description:
       'A lively yellow tea infused with the vibrant flavors of pineapple, mango, and papaya.',
@@ -189,6 +207,7 @@ const items = [
   {
     name: 'Caramel Delight',
     category: 'yellow',
+    price: 19.9,
     id: 'yellow2',
     description:
       'This creamy yellow tea is infused with the rich, indulgent taste of caramel.',
@@ -198,6 +217,7 @@ const items = [
   {
     name: 'Sunrise Serenade',
     category: 'yellow',
+    price: 40.9,
     id: 'yellow3',
     description:
       'A spicy yellow tea blend with aromatic spices like cinnamon, cardamom, and cloves, inspired by traditional Indian chai.',
@@ -207,6 +227,7 @@ const items = [
   {
     name: 'Masala Chai',
     category: 'oolong',
+    price: 29.9,
     id: 'oolong0',
     description:
       'A spicy oolong tea blend with aromatic spices like cinnamon, cardamom, and cloves, inspired by traditional Indian chai.',
@@ -216,6 +237,7 @@ const items = [
   {
     name: 'Cherry Blossom',
     category: 'oolong',
+    price: 20.5,
     id: 'oolong1',
     description:
       'A delicate oolong tea blend infused with the delicate and fragrant flavor of cherry blossoms, perfect for a light and refreshing cup.',
@@ -225,6 +247,7 @@ const items = [
   {
     name: 'Ruby Red',
     category: 'oolong',
+    price: 49.9,
     id: 'oolong2',
     description:
       'A fruity oolong tea blend made with tart and tangy hibiscus petals, perfect for a refreshing iced tea.',
@@ -234,6 +257,7 @@ const items = [
   {
     name: 'Ginger Peach',
     category: 'oolong',
+    price: 39.1,
     id: 'oolong3',
     description:
       'A zesty and fruity oolong tea blend infused with the warmth of ginger and the sweetness of ripe peaches, for a satisfying and flavorful cup.',

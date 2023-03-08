@@ -2,6 +2,7 @@ import React from 'react';
 import FancyWindow from '../components/FancyWindow';
 import { Context } from '../Context';
 import { useContext } from 'react';
+import TeaCard from '../components/TeaCard';
 import '../styles/tea-page.css';
 
 function Tea() {
@@ -13,19 +14,31 @@ function Tea() {
         <div className="tea-page">
           <div className="header">
             <p>Tea</p>
-            <button>Name</button>
-            <button>Price</button>
+            <button className="sort">Name</button>
+            <button className="sort">Price</button>
           </div>
           <div className="sider">
-            <button>Favorites</button>
-            <button>Black</button>
-            <button>Dark</button>
-            <button>Green</button>
-            <button>Oolong</button>
-            <button>White</button>
-            <button>Yellow</button>
+            <button className="sort">Favorites</button>
+            <button className="sort">Black</button>
+            <button className="sort">Dark</button>
+            <button className="sort">Green</button>
+            <button className="sort">Oolong</button>
+            <button className="sort">White</button>
+            <button className="sort">Yellow</button>
           </div>
-          <div className="cards"></div>
+          <div className="cards">
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+            <TeaCard data={data[0]} />
+          </div>
         </div>
       </FancyWindow>
     </div>

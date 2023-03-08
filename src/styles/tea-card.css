@@ -1,0 +1,39 @@
+.tea-card {
+  width: 220px;
+  height: 323px;
+  border: 2px solid #a5a3a1;
+  box-shadow: 0 0 8px 1px #a5a3a100;
+  margin-bottom: 32px;
+  transition: transform 350ms, box-shadow 350ms;
+}
+.tea-card:hover {
+  box-shadow: 0 3px 8px 2px #a5a3a1;
+  transform: translateY(-3px);
+}
+/* Image side with title and favorite button */
+.tea-card .image {
+  height: 220px;
+  width: 100%;
+  background-size: cover;
+  border-bottom: 2px solid #a5a3a1;
+  cursor: pointer;
+}
+.tea-card .image p {
+  font-family: 'Parisienne';
+  font-size: 24px;
+  text-align: center;
+  color: #ede6d3;
+  padding-top: 12px;
+}
+.tea-card .image button {
+  background-size: cover;
+  width: 34px;
+  height: 32px;
+  position: absolute;
+  top: 120px;
+  left: 160px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: opacity 350ms;
+}
