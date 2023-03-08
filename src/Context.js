@@ -11,7 +11,16 @@ function ContextProvider({ children }) {
 
   const [cart, setCart] = useState([]);
 
-  return <Context.Provider value={{ data }}>{children}</Context.Provider>;
+  const addToCart = (id) => {
+    let item = data.find((tea) => tea.id === id);
+    setCart((prevCart) => [...prevCart, item]);
+  };
+
+  return (
+    <Context.Provider value={{ data, cart, addToCart }}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 export { Context, ContextProvider };

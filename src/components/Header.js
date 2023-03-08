@@ -6,6 +6,8 @@ import { Context } from '../Context';
 import { useContext } from 'react';
 
 function Header(props) {
+  const { cart } = useContext(Context);
+
   return (
     <header className="header">
       <Link to="/">
@@ -25,7 +27,7 @@ function Header(props) {
       <Link to="/contact">
         <button className="contact header-button">Contact</button>
       </Link>
-      <div className="cart">31</div>
+      <div className="cart">{cart.length}</div>
     </header>
   );
 }

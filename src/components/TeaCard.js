@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import favoriteIcon from '../assets/favorite.png';
 import notFavoriteIcon from '../assets/not-favorite.png';
+import { Context } from '../Context';
+import { useContext } from 'react';
 import '../styles/tea-card.css';
 
 function TeaCard({
-  data: { name, category, price, id, description, source, favorite },
+  tea: { name, category, price, id, description, source, favorite },
 }) {
+  const { addToCart } = useContext(Context);
+
   const [showFavButton, setShowFavButton] = useState(favorite ? true : false);
 
   return (
@@ -31,7 +35,7 @@ function TeaCard({
       <div className="information">
         <p>{`${name} - ${category} tea leaves (100 gr)`}</p>
         <p>{`${price} €`}</p>
-        <button>Add to cart</button>
+        <button onClick={() => addToCart(id)}>Add to cart</button>
       </div>
     </div>
   );

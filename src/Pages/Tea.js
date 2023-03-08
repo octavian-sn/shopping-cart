@@ -27,17 +27,9 @@ function Tea() {
             <button className="sort">Yellow</button>
           </div>
           <div className="cards">
-            <TeaCard data={data[0]} />
-            {/* <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} />
-            <TeaCard data={data[0]} /> */}
+            {data.map((tea) => (
+              <TeaCard tea={tea} />
+            ))}
           </div>
         </div>
       </FancyWindow>
