@@ -8,9 +8,23 @@ import '../styles/tea-card.css';
 function TeaCard({
   tea: { name, category, price, id, description, source, favorite },
 }) {
-  const { addToCart } = useContext(Context);
+  const { addToCart, addToFavorites } = useContext(Context);
 
   const [showFavButton, setShowFavButton] = useState(favorite ? true : false);
+  const favoriteButton = favorite ? (
+    <button
+      onClick={() => addToFavorites(id)}
+      style={{ backgroundImage: `url(${favoriteIcon})` }}
+    ></button>
+  ) : (
+    <button
+      onClick={() => addToFavorites(id)}
+      style={{
+        backgroundImage: `url(${notFavoriteIcon})`,
+        opacity: showFavButton ? '1' : '0',
+      }}
+    ></button>
+  );
 
   return (
     <div
@@ -21,16 +35,7 @@ function TeaCard({
       {/* Image side with title and fav button */}
       <div className="image" style={{ backgroundImage: `url(${source})` }}>
         <p>{name}</p>
-        {favorite ? (
-          <button style={{ backgroundImage: `url(${favoriteIcon})` }}></button>
-        ) : (
-          <button
-            style={{
-              backgroundImage: `url(${notFavoriteIcon})`,
-              opacity: showFavButton ? '1' : '0',
-            }}
-          ></button>
-        )}
+        {favoriteButton}
       </div>
       <div className="information">
         <p>{`${name} - ${category} tea leaves (100 gr)`}</p>

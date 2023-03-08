@@ -6,7 +6,11 @@ import TeaCard from '../components/TeaCard';
 import '../styles/tea-page.css';
 
 function Tea() {
-  const { data } = useContext(Context);
+  const {
+    items,
+    showFavorites,
+    filters: { favorite },
+  } = useContext(Context);
 
   return (
     <div>
@@ -18,7 +22,13 @@ function Tea() {
             <button className="sort">Price</button>
           </div>
           <div className="sider">
-            <button className="sort">Favorites</button>
+            <button
+              style={{ fontWeight: favorite && 900 }}
+              onClick={showFavorites}
+              className="sort"
+            >
+              Favorites
+            </button>
             <button className="sort">Black</button>
             <button className="sort">Dark</button>
             <button className="sort">Green</button>
@@ -27,8 +37,8 @@ function Tea() {
             <button className="sort">Yellow</button>
           </div>
           <div className="cards">
-            {data.map((tea) => (
-              <TeaCard tea={tea} />
+            {items.map((tea) => (
+              <TeaCard key={tea.id} tea={tea} />
             ))}
           </div>
         </div>
