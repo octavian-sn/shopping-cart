@@ -7,7 +7,6 @@ function ContextProvider({ children }) {
   const [data, setData] = useState(teaData);
   // Items being displayed in the 'Tea' window
   const [items, setItems] = useState(data);
-  const [favorites, setFavorites] = useState([]);
   const [cart, setCart] = useState([]);
   const [filters, setFilters] = useState({
     favorite: false,
@@ -20,22 +19,14 @@ function ContextProvider({ children }) {
   });
   useEffect(() => {
     setItems(data);
-    updateFavorites();
-    console.log('from data');
+    filters.favorite === true &&
+      setItems(data.filter((item) => item.favorite === true));
+    filterIsOn() && reRenderFiltered();
   }, [data]);
-  useEffect(() => {
-    filters.favorite === true && setItems(favorites);
-    console.log('from favorites');
-  }, [favorites]);
 
   // Cart list
   const addToCart = (id) => {
     setCart((prevCart) => [...prevCart, data.find((tea) => tea.id === id)]);
-  };
-
-  // Favorites list
-  const updateFavorites = () => {
-    setFavorites(data.filter((item) => item.favorite === true && item));
   };
 
   // Add tea to favorites list
@@ -49,7 +40,11 @@ function ContextProvider({ children }) {
 
   // Toggle favorites filter
   const showFavorites = () => {
-    setItems(filters.favorite === true ? data : favorites);
+    setItems(
+      filters.favorite === true
+        ? data
+        : data.filter((item) => item.favorite === true)
+    );
     setFilters((prevFilters) => {
       let newFilters = { ...prevFilters };
       for (let key in newFilters) {
@@ -61,14 +56,29 @@ function ContextProvider({ children }) {
     });
   };
 
-  const testing = () => console.log(filters, otherFilters());
+  const testing = () => console.log(toggleCategory('black'));
+
+  // Render filtered after changing 'favorite' property
+  const reRenderFiltered = () => {
+    let newArray = [];
+    for (const key in filters) {
+      if (filters[key] === true) {
+        newArray = newArray.concat(
+          data.filter((item) => item.category === key)
+        );
+      }
+    }
+    setItems(newArray);
+  };
 
   // Toggle tea category
+  // Check if any filter is on
   const filterIsOn = (object = filters) => {
     let categoryFilter = Object.values(object);
     categoryFilter.shift();
     return categoryFilter.some((filter) => filter === true);
   };
+  // Check if other filters than the current pressed are on
   const otherFilters = (currentFilter) => {
     let newFilters = {};
     for (const key in filters) {
@@ -76,7 +86,6 @@ function ContextProvider({ children }) {
         newFilters[key] = filters[key];
       }
     }
-    // console.log(currentFilter);
     return Object.values(newFilters).some((filter) => filter === true);
   };
   const toggleCategory = (category) => {
