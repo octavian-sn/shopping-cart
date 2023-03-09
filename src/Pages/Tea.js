@@ -3,6 +3,8 @@ import FancyWindow from '../components/FancyWindow';
 import { Context } from '../Context';
 import { useContext } from 'react';
 import TeaCard from '../components/TeaCard';
+import up from '../assets/up-arrow.png';
+import down from '../assets/down-arrow.png';
 import '../styles/tea-page.css';
 
 function Tea() {
@@ -16,6 +18,15 @@ function Tea() {
     filters: { favorite, black, dark, green, oolong, white, yellow },
   } = useContext(Context);
 
+  const nameSortingArrow = () => {
+    if (criteria === 'name' && name === 'ascending') return up;
+    if (criteria === 'name' && name === 'descending') return down;
+  };
+  const priceSortingArrow = () => {
+    if (criteria === 'price' && price === 'ascending') return up;
+    if (criteria === 'price' && price === 'descending') return down;
+  };
+
   return (
     <div>
       <FancyWindow size="big">
@@ -24,14 +35,20 @@ function Tea() {
           <div className="header">
             <p onClick={testing}>Tea</p>
             <button
-              style={{ fontWeight: criteria === 'name' && 900 }}
+              style={{
+                fontWeight: criteria === 'name' && 900,
+                backgroundImage: `url(${nameSortingArrow()})`,
+              }}
               onClick={() => sort('name')}
               className="sort"
             >
               Name
             </button>
             <button
-              style={{ fontWeight: criteria === 'price' && 900 }}
+              style={{
+                fontWeight: criteria === 'price' && 900,
+                backgroundImage: `url(${priceSortingArrow()})`,
+              }}
               onClick={sort}
               className="sort"
             >

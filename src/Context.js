@@ -59,6 +59,7 @@ function ContextProvider({ children }) {
       }
       return newFilters;
     });
+    setSorting({ criteria: null, name: 'ascending', price: 'ascending' });
   };
 
   const testing = () => console.log(sorting);
@@ -74,6 +75,7 @@ function ContextProvider({ children }) {
       }
     }
     setItems(newArray);
+    setSorting({ criteria: null, name: 'ascending', price: 'ascending' });
   };
 
   // Toggle tea category
@@ -113,6 +115,7 @@ function ContextProvider({ children }) {
       favorite: false,
       [category]: !prevFilters[category],
     }));
+    setSorting({ criteria: null, name: 'ascending', price: 'ascending' });
   };
 
   // Sort tea
