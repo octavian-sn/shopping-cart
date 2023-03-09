@@ -8,6 +8,7 @@ import '../styles/tea-card.css';
 
 function TeaCard({
   tea: { name, category, price, id, description, source, favorite },
+  popUp,
 }) {
   const { addToCart, addToFavorites } = useContext(Context);
 
@@ -34,7 +35,13 @@ function TeaCard({
       onMouseLeave={() => !favorite && setShowFavButton(false)}
     >
       {/* Image side with title and fav button */}
-      <div className="image" style={{ backgroundImage: `url(${source})` }}>
+      <div
+        onClick={() =>
+          popUp({ name, description, category, price, source, id })
+        }
+        className="image"
+        style={{ backgroundImage: `url(${source})` }}
+      >
         <p>{name}</p>
         {favoriteButton}
       </div>

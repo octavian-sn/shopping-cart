@@ -1,0 +1,79 @@
+.popup-overlay {
+  background-color: rgba(43, 24, 7, 0.48);
+  position: absolute !important;
+  height: calc(100% + 92px);
+  width: 1440px;
+  top: -66px;
+  right: -97px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8%;
+}
+.popup-overlay .pop-up {
+  height: 100%;
+  width: 100%;
+  padding: 2px;
+  display: flex;
+}
+.pop-up img {
+  /* height: 247px;
+  width: 247px; */
+  border: 3px solid #7d532b;
+}
+.pop-up .information {
+  padding: 24px;
+  padding-top: 32px;
+  color: #7d532b;
+  font-family: 'Roboto';
+  display: flex;
+  flex-direction: column;
+}
+.pop-up .information .close {
+  background-image: url('../assets/close-icon.png');
+  background-position: center;
+  position: absolute !important;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+.pop-up .information p:nth-child(2) {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+.pop-up .information p:nth-child(3) {
+  font-size: 14px;
+  letter-spacing: 0.115em;
+  margin-bottom: 12px;
+}
+.pop-up .information p:nth-child(4) {
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+.pop-up .information p:nth-child(5) {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+}
+.pop-up .information .add {
+  background-color: rgba(237, 230, 211, 0.78);
+  border: 1px solid rgba(125, 83, 43, 0.7);
+  border-radius: 3px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  color: #7d532b;
+  height: 41px;
+  width: 175px;
+  align-self: center;
+  cursor: pointer;
+}

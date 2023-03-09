@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FancyWindow from '../components/FancyWindow';
+import PopUp from '../components/PopUp';
 import { Context } from '../Context';
 import { useContext } from 'react';
 import TeaCard from '../components/TeaCard';
@@ -17,6 +18,12 @@ function Tea() {
     testing,
     filters: { favorite, black, dark, green, oolong, white, yellow },
   } = useContext(Context);
+  const [popUp, setPopUp] = useState(null);
+  const closePopUp = () => setPopUp(null);
+  const getPopUpInformation = (information) => {
+    setPopUp(information);
+    console.log(popUp);
+  };
 
   const nameSortingArrow = () => {
     if (criteria === 'name' && name === 'ascending') return up;
@@ -109,11 +116,12 @@ function Tea() {
           </div>
           <div className="cards">
             {items.map((tea) => (
-              <TeaCard key={tea.id} tea={tea} />
+              <TeaCard key={tea.id} tea={tea} popUp={getPopUpInformation} />
             ))}
           </div>
         </div>
       </FancyWindow>
+      {popUp && <PopUp closePopUp={closePopUp} popUp={popUp} />}
     </div>
   );
 }

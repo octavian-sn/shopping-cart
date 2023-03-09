@@ -7,7 +7,6 @@
   font-family: 'Parisienne';
   font-size: 36px;
   text-align: justify;
-  transition: display 1s;
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
