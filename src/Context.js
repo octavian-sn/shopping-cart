@@ -17,6 +17,11 @@ function ContextProvider({ children }) {
     white: false,
     yellow: false,
   });
+  const [sorting, setSorting] = useState({
+    criteria: null,
+    name: 'ascending',
+    price: 'ascending',
+  });
   useEffect(() => {
     setItems(data);
     filters.favorite === true &&
@@ -56,7 +61,7 @@ function ContextProvider({ children }) {
     });
   };
 
-  const testing = () => console.log(toggleCategory('black'));
+  const testing = () => console.log(sorting);
 
   // Render filtered after changing 'favorite' property
   const reRenderFiltered = () => {
@@ -78,7 +83,7 @@ function ContextProvider({ children }) {
     categoryFilter.shift();
     return categoryFilter.some((filter) => filter === true);
   };
-  // Check if other filters than the current pressed are on
+  // Check if other filters than the one being pressed are on
   const otherFilters = (currentFilter) => {
     let newFilters = {};
     for (const key in filters) {
@@ -110,12 +115,61 @@ function ContextProvider({ children }) {
     }));
   };
 
+  // Sort tea
+  const sort = (criteria) => {
+    const newArray = [...items];
+    if (criteria === 'name') {
+      if (sorting.name === 'ascending') {
+        newArray.sort((a, b) => {
+          const nameA = a.name.toLocaleUpperCase();
+          const nameB = b.name.toLocaleUpperCase();
+          if (nameA < nameB) return -1;
+          if (nameA > nameB) return 1;
+          return 0;
+        });
+        setSorting({
+          criteria: 'name',
+          name: 'descending',
+          price: 'ascending',
+        });
+      } else {
+        newArray.sort((a, b) => {
+          const nameA = a.name.toLocaleUpperCase();
+          const nameB = b.name.toLocaleUpperCase();
+          if (nameA < nameB) return 1;
+          if (nameA > nameB) return -1;
+          return 0;
+        });
+        setSorting({ criteria: 'name', name: 'ascending', price: 'ascending' });
+      }
+    } else {
+      if (sorting.price === 'ascending') {
+        newArray.sort((a, b) => a.price - b.price);
+        setSorting({
+          criteria: 'price',
+          name: 'ascending',
+          price: 'descending',
+        });
+      } else {
+        newArray.sort((a, b) => b.price - a.price);
+        setSorting({
+          criteria: 'price',
+          name: 'ascending',
+          price: 'ascending',
+        });
+      }
+    }
+    setItems(newArray);
+  };
+
   return (
     <Context.Provider
       value={{
         items,
         cart,
         filters,
+        sorting,
+        sort,
         testing,
         toggleCategory,
         addToCart,

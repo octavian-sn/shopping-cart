@@ -10,6 +10,8 @@ function Tea() {
     items,
     showFavorites,
     toggleCategory,
+    sort,
+    sorting: { criteria, name, price },
     testing,
     filters: { favorite, black, dark, green, oolong, white, yellow },
   } = useContext(Context);
@@ -20,11 +22,21 @@ function Tea() {
         <div className="tea-page">
           {/* Sorting buttons */}
           <div className="header">
-            <p>Tea</p>
-            <button onClick={testing} className="sort">
+            <p onClick={testing}>Tea</p>
+            <button
+              style={{ fontWeight: criteria === 'name' && 900 }}
+              onClick={() => sort('name')}
+              className="sort"
+            >
               Name
             </button>
-            <button className="sort">Price</button>
+            <button
+              style={{ fontWeight: criteria === 'price' && 900 }}
+              onClick={sort}
+              className="sort"
+            >
+              Price
+            </button>
           </div>
           {/* Tea categories buttons and favorites */}
           <div className="sider">

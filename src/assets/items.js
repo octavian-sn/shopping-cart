@@ -37,7 +37,7 @@ const items = [
   {
     name: 'Sweet Dreams',
     category: 'green',
-    price: 105.2,
+    price: 85.7,
     id: 'green1',
     description:
       'This soothing blend of green tea and chamomile will help you relax and drift off to sleep peacefully.',
@@ -67,7 +67,7 @@ const items = [
   {
     name: 'Fire Blood',
     category: 'black',
-    price: 90.99,
+    price: 104.99,
     id: 'black0',
     description:
       'Start your day off right with this invigorating black tea blend, infused with hints of citrus and ginger.',
@@ -107,7 +107,7 @@ const items = [
   {
     name: 'Fairy Made',
     category: 'white',
-    price: 80.5,
+    price: 100.0,
     id: 'white0',
     description:
       'This spicy white tea is infused with the warming flavors of ginger and cinnamon.',
@@ -117,7 +117,7 @@ const items = [
   {
     name: 'Winter Wonderland',
     category: 'white',
-    price: 60.1,
+    price: 101.9,
     id: 'white1',
     description:
       'Embrace the chill of winter with this cozy blend of white tea, cinnamon, and cloves.',
