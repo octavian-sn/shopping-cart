@@ -9,18 +9,24 @@ function Tea() {
   const {
     items,
     showFavorites,
-    filters: { favorite },
+    toggleCategory,
+    testing,
+    filters: { favorite, black, dark, green, oolong, white, yellow },
   } = useContext(Context);
 
   return (
     <div>
       <FancyWindow size="big">
         <div className="tea-page">
+          {/* Sorting buttons */}
           <div className="header">
             <p>Tea</p>
-            <button className="sort">Name</button>
+            <button onClick={testing} className="sort">
+              Name
+            </button>
             <button className="sort">Price</button>
           </div>
+          {/* Tea categories buttons and favorites */}
           <div className="sider">
             <button
               style={{ fontWeight: favorite && 900 }}
@@ -29,12 +35,48 @@ function Tea() {
             >
               Favorites
             </button>
-            <button className="sort">Black</button>
-            <button className="sort">Dark</button>
-            <button className="sort">Green</button>
-            <button className="sort">Oolong</button>
-            <button className="sort">White</button>
-            <button className="sort">Yellow</button>
+            <button
+              style={{ fontWeight: black && 900 }}
+              onClick={() => toggleCategory('black')}
+              className="sort"
+            >
+              Black
+            </button>
+            <button
+              style={{ fontWeight: dark && 900 }}
+              onClick={() => toggleCategory('dark')}
+              className="sort"
+            >
+              Dark
+            </button>
+            <button
+              style={{ fontWeight: green && 900 }}
+              onClick={() => toggleCategory('green')}
+              className="sort"
+            >
+              Green
+            </button>
+            <button
+              style={{ fontWeight: oolong && 900 }}
+              onClick={() => toggleCategory('oolong')}
+              className="sort"
+            >
+              Oolong
+            </button>
+            <button
+              style={{ fontWeight: white && 900 }}
+              onClick={() => toggleCategory('white')}
+              className="sort"
+            >
+              White
+            </button>
+            <button
+              style={{ fontWeight: yellow && 900 }}
+              onClick={() => toggleCategory('yellow')}
+              className="sort"
+            >
+              Yellow
+            </button>
           </div>
           <div className="cards">
             {items.map((tea) => (

@@ -35,6 +35,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  opacity: 0.85;
   transition: opacity 350ms;
 }
 /* Information side with details and add button */

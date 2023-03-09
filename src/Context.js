@@ -11,19 +11,21 @@ function ContextProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [filters, setFilters] = useState({
     favorite: false,
-    black: true,
-    dark: true,
-    green: true,
-    oolong: true,
-    white: true,
-    yellow: true,
+    black: false,
+    dark: false,
+    green: false,
+    oolong: false,
+    white: false,
+    yellow: false,
   });
   useEffect(() => {
     setItems(data);
     updateFavorites();
+    console.log('from data');
   }, [data]);
   useEffect(() => {
     filters.favorite === true && setItems(favorites);
+    console.log('from favorites');
   }, [favorites]);
 
   // Cart list
@@ -47,11 +49,55 @@ function ContextProvider({ children }) {
 
   // Toggle favorites filter
   const showFavorites = () => {
-    filters.favorite === true ? setItems(favorites) : setItems(favorites);
     setItems(filters.favorite === true ? data : favorites);
+    setFilters((prevFilters) => {
+      let newFilters = { ...prevFilters };
+      for (let key in newFilters) {
+        key === 'favorite'
+          ? (newFilters[key] = !newFilters[key])
+          : (newFilters[key] = false);
+      }
+      return newFilters;
+    });
+  };
+
+  const testing = () => console.log(filters, otherFilters());
+
+  // Toggle tea category
+  const filterIsOn = (object = filters) => {
+    let categoryFilter = Object.values(object);
+    categoryFilter.shift();
+    return categoryFilter.some((filter) => filter === true);
+  };
+  const otherFilters = (currentFilter) => {
+    let newFilters = {};
+    for (const key in filters) {
+      if (key !== 'favorite' && key !== currentFilter) {
+        newFilters[key] = filters[key];
+      }
+    }
+    // console.log(currentFilter);
+    return Object.values(newFilters).some((filter) => filter === true);
+  };
+  const toggleCategory = (category) => {
+    if (filters[category] && otherFilters(category)) {
+      setItems((prevItems) =>
+        prevItems.filter((item) => item.category !== category)
+      );
+    } else if (filters[category]) {
+      setItems(data);
+    } else if (filterIsOn()) {
+      setItems((prevItems) => {
+        const newItems = data.filter((item) => item.category === category);
+        return prevItems.concat(newItems);
+      });
+    } else {
+      setItems(data.filter((item) => item.category === category));
+    }
     setFilters((prevFilters) => ({
       ...prevFilters,
-      favorite: !prevFilters.favorite,
+      favorite: false,
+      [category]: !prevFilters[category],
     }));
   };
 
@@ -61,6 +107,8 @@ function ContextProvider({ children }) {
         items,
         cart,
         filters,
+        testing,
+        toggleCategory,
         addToCart,
         addToFavorites,
         showFavorites,

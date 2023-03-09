@@ -3,6 +3,7 @@ import favoriteIcon from '../assets/favorite.png';
 import notFavoriteIcon from '../assets/not-favorite.png';
 import { Context } from '../Context';
 import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/tea-card.css';
 
 function TeaCard({
@@ -45,5 +46,10 @@ function TeaCard({
     </div>
   );
 }
+
+TeaCard.propTypes = {
+  // name: PropTypes.isRequired,
+  // Add the rest
+};
 
 export default TeaCard;
