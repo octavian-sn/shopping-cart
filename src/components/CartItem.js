@@ -14,7 +14,7 @@ function CartItem({
   return (
     <div className="cart-item">
       <img src={source} alt="tea in a cup"></img>
-      <div>
+      <div className="details">
         <p>{`${name} - ${category} tea leaves (100gr)`}</p>
         <p>{`${price} €`}</p>
         <div className="quantity-buttons">

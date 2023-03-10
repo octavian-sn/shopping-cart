@@ -40,7 +40,7 @@ function ContextProvider({ children }) {
       } else return [...prevCart, { ...item, quantity: qty }];
     });
   };
-  const removeFromCart = (id = 'all') => {
+  const removeFromCart = (id) => {
     if (id === 'all') setCart([]);
   };
 

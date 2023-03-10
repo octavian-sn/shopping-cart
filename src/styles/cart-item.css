@@ -1,5 +1,6 @@
 .cart-item {
   display: flex;
+  margin: 22px 0;
 }
 .cart-item img {
   height: 103px;
@@ -7,10 +8,19 @@
   border: 2px solid #7d532b;
   margin-right: 12px;
 }
-.cart-item div :nth-child(1) {
-  font-weight: 100;
+/* Name of item */
+.cart-item .details p {
   margin-bottom: 8px;
   margin-top: 2px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: #7d532b;
+}
+/* Price */
+.cart-item .details :nth-child(2) {
+  font-weight: 600;
 }
 .quantity-buttons {
   display: flex;
@@ -41,6 +51,8 @@
   text-align: center;
   font-size: 18px !important;
   margin: 0 6px;
+  font-family: 'Roboto';
+  color: #7d532b;
 }
 .quantity-buttons input {
   outline: none;

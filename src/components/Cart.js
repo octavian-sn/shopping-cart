@@ -28,7 +28,7 @@ function Cart({ toggleCart, showCart }) {
   const checkout = () => {
     setStatus(true);
     setTimeout(() => {
-      removeFromCart();
+      removeFromCart('all');
       setStatus(false);
     }, 3000);
   };
@@ -47,9 +47,9 @@ function Cart({ toggleCart, showCart }) {
         {cart.length > 0 ? (
           <div className="cart-not-empty">
             <div className="items">{items}</div>
-            <p>{`Total: `}</p>
-            <p>{`Taxes:`}</p>
-            <p>{`Subtotal:`}</p>
+            <p className="total">{`Total: `}</p>
+            <p className="taxes">{`Taxes:`}</p>
+            <p className="subtotal">{`Subtotal:`}</p>
             <button onClick={checkout} className="checkout">
               {!status ? 'Checkout' : 'Submitting...'}
             </button>

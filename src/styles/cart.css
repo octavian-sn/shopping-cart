@@ -69,13 +69,12 @@
 /* If cart has items in it */
 .cart-not-empty .items {
   width: 100%;
-  padding: 31px 0;
   margin: 12px 0;
   border-bottom: 1px solid #7d532b81;
 }
-.cart-not-empty :nth-child(3),
-.cart-not-empty :nth-child(4),
-.cart-not-empty :nth-child(2) {
+.cart-not-empty .total,
+.cart-not-empty .taxes,
+.cart-not-empty .subtotal {
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 14px;
@@ -83,7 +82,7 @@
   color: #7d532b;
   margin-bottom: 10px;
 }
-.cart-not-empty :nth-child(4) {
+.cart-not-empty .subtotal {
   font-size: 18px;
   margin-bottom: 26px;
 }
