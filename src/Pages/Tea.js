@@ -15,7 +15,6 @@ function Tea() {
     toggleCategory,
     sort,
     sorting: { criteria, name, price },
-    testing,
     filters: { favorite, black, dark, green, oolong, white, yellow },
   } = useContext(Context);
   const [popUp, setPopUp] = useState(null);
@@ -39,7 +38,7 @@ function Tea() {
         <div className="tea-page">
           {/* Sorting buttons */}
           <div className="header">
-            <p onClick={testing}>Tea</p>
+            <p>Tea</p>
             <button
               style={{
                 fontWeight: criteria === 'name' && 900,

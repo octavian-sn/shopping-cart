@@ -5,7 +5,7 @@ const Context = createContext();
 
 function ContextProvider({ children }) {
   const [data, setData] = useState(teaData);
-  // Items being displayed in the 'Tea' window
+  // 'items' are displayed in the 'Tea' window
   const [items, setItems] = useState(data);
   const [cart, setCart] = useState([]);
   const [filters, setFilters] = useState({
@@ -29,9 +29,19 @@ function ContextProvider({ children }) {
     filterIsOn() && reRenderFiltered();
   }, [data]);
 
-  // Cart list
-  const addToCart = (id) => {
-    setCart((prevCart) => [...prevCart, data.find((tea) => tea.id === id)]);
+  const addToCart = (id, qty = 1) => {
+    setCart((prevCart) => {
+      const teaAlreadyInCart = prevCart.some((tea) => tea.id === id);
+      const item = data.find((tea) => tea.id === id);
+      if (teaAlreadyInCart) {
+        return prevCart.map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity + qty } : item
+        );
+      } else return [...prevCart, { ...item, quantity: qty }];
+    });
+  };
+  const removeFromCart = (id = 'all') => {
+    if (id === 'all') setCart([]);
   };
 
   // Add tea to favorites list
@@ -61,8 +71,6 @@ function ContextProvider({ children }) {
     });
     setSorting({ criteria: null, name: 'ascending', price: 'ascending' });
   };
-
-  const testing = () => console.log(sorting);
 
   // Render filtered after changing 'favorite' property
   const reRenderFiltered = () => {
@@ -173,9 +181,9 @@ function ContextProvider({ children }) {
         filters,
         sorting,
         sort,
-        testing,
         toggleCategory,
         addToCart,
+        removeFromCart,
         addToFavorites,
         showFavorites,
       }}

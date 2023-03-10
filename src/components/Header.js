@@ -3,10 +3,22 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/tea/logo.png';
 import '../styles/header.css';
 import { Context } from '../Context';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 function Header({ toggleCart }) {
   const { cart } = useContext(Context);
+  const [cartQuantity, setCartQuantity] = useState(0);
+  useEffect(() => {
+    let number = 0;
+    cart.forEach((element) => {
+      if (element.quantity) {
+        number += element.quantity;
+      } else {
+        number += 1;
+      }
+    });
+    setCartQuantity(number);
+  }, [cart]);
 
   return (
     <header className="header">
@@ -28,7 +40,7 @@ function Header({ toggleCart }) {
         <button className="contact header-button">Contact</button>
       </Link>
       <div onClick={toggleCart} className="cart">
-        {cart.length}
+        {cartQuantity}
       </div>
     </header>
   );
