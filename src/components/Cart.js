@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Context } from '../Context';
 import { useContext } from 'react';
+import CartItem from './CartItem';
 import '../styles/cart.css';
 
 function Cart({ toggleCart, showCart }) {
-  const { cart, removeFromCart } = useContext(Context);
+  const { cart, addToCart, removeFromCart } = useContext(Context);
   const [status, setStatus] = useState(false);
 
   const test = () => console.log(cart);
@@ -15,6 +16,15 @@ function Cart({ toggleCart, showCart }) {
     currency: 'USD',
   });
 
+  const items = cart.map((item) => (
+    <CartItem
+      key={item.id}
+      item={item}
+      addToCart={addToCart}
+      removeFromCart={removeFromCart}
+    />
+  ));
+
   const checkout = () => {
     setStatus(true);
     setTimeout(() => {
@@ -22,6 +32,7 @@ function Cart({ toggleCart, showCart }) {
       setStatus(false);
     }, 3000);
   };
+
   return (
     <>
       <div
@@ -35,7 +46,7 @@ function Cart({ toggleCart, showCart }) {
         </p>
         {cart.length > 0 ? (
           <div className="cart-not-empty">
-            <div className="items"></div>
+            <div className="items">{items}</div>
             <p>{`Total: `}</p>
             <p>{`Taxes:`}</p>
             <p>{`Subtotal:`}</p>
