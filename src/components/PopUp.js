@@ -11,19 +11,18 @@ function PopUp({
   const { addToCart } = useContext(Context);
 
   return (
-    <div onClick={closePopUp} className="popup-overlay">
+    <div className="popup-overlay">
       <FancyWindow size="small">
         <div className="pop-up">
-          <img src={source}></img>
+          <img src={source} alt="tea in a cup"></img>
           <div className="information">
-            <button className="close"></button>
+            <button onClickCapture={closePopUp} className="close"></button>
             <p>{name}</p>
             <p>{description}</p>
             <p>{`${category} tea leaves (100gr)`}</p>
             <p>{`${price} €`}</p>
             <button
               onClick={(e) => {
-                e.stopPropagation();
                 addToCart(id);
               }}
               className="add"
