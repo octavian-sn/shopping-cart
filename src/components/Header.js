@@ -10,13 +10,15 @@ function Header({ toggleCart }) {
   const [cartQuantity, setCartQuantity] = useState(0);
   useEffect(() => {
     let number = 0;
-    cart.forEach((element) => {
-      if (element.quantity) {
-        number += element.quantity;
-      } else {
-        number += 1;
-      }
-    });
+    if (cart) {
+      cart.forEach((element) => {
+        if (element.quantity) {
+          number += element.quantity;
+        } else {
+          number += 1;
+        }
+      });
+    }
     setCartQuantity(number);
   }, [cart]);
 

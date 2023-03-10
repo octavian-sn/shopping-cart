@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 import '../styles/cart.css';
 
 function Cart({ toggleCart, showCart }) {
-  const { cart, addToCart, removeFromCart } = useContext(Context);
+  const { cart, removeFromCart } = useContext(Context);
   const [status, setStatus] = useState(false);
 
   const test = () => console.log(cart);
@@ -16,14 +16,7 @@ function Cart({ toggleCart, showCart }) {
     currency: 'USD',
   });
 
-  const items = cart.map((item) => (
-    <CartItem
-      key={item.id}
-      item={item}
-      addToCart={addToCart}
-      removeFromCart={removeFromCart}
-    />
-  ));
+  const items = cart.map((item) => <CartItem key={item.id} item={item} />);
 
   const checkout = () => {
     setStatus(true);

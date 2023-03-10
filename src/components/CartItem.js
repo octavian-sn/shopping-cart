@@ -1,11 +1,10 @@
 import React from 'react';
+import { Context } from '../Context';
+import { useContext } from 'react';
 import '../styles/cart-item.css';
 
-function CartItem({
-  addToCart,
-  removeFromCart,
-  item: { name, category, price, quantity, source, id },
-}) {
+function CartItem({ item: { name, category, price, quantity, source, id } }) {
+  const { setCartItemValue, addToCart, removeFromCart } = useContext(Context);
   const changeQty = (e) => {
     const value = e.target.value;
     value > quantity ? addToCart(id, value) : removeFromCart(id, value);
@@ -19,7 +18,10 @@ function CartItem({
         <p>{`${price} €`}</p>
         <div className="quantity-buttons">
           <button onClick={() => removeFromCart(id)}></button>
-          <input onChange={changeQty} value={quantity || ''}></input>
+          <input
+            onChange={(e) => setCartItemValue(id, e.target.value)}
+            value={quantity || ''}
+          ></input>
           <button onClick={() => addToCart(id)}></button>
         </div>
       </div>

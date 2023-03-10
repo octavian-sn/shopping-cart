@@ -40,8 +40,26 @@ function ContextProvider({ children }) {
       } else return [...prevCart, { ...item, quantity: qty }];
     });
   };
-  const removeFromCart = (id) => {
+  const removeFromCart = (id, qty = 1) => {
     if (id === 'all') setCart([]);
+    setCart((prevCart) => {
+      const item = prevCart.find((tea) => tea.id === id);
+      if (item.quantity > 1) {
+        return prevCart.map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - qty } : item
+        );
+      }
+      return prevCart.filter((item) => item.id !== id);
+    });
+  };
+  const setCartItemValue = (id, qty) => {
+    setCart((prevCart) => {
+      if (prevCart.length === 1 && qty === 0) return [];
+      if (+qty === 0) return prevCart.filter((item) => item.id !== id);
+      return prevCart.map((item) =>
+        item.id === id ? { ...item, quantity: +qty } : item
+      );
+    });
   };
 
   // Add tea to favorites list
@@ -184,6 +202,7 @@ function ContextProvider({ children }) {
         toggleCategory,
         addToCart,
         removeFromCart,
+        setCartItemValue,
         addToFavorites,
         showFavorites,
       }}
