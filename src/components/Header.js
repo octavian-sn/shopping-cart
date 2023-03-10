@@ -5,7 +5,7 @@ import '../styles/header.css';
 import { Context } from '../Context';
 import { useContext } from 'react';
 
-function Header(props) {
+function Header({ toggleCart }) {
   const { cart } = useContext(Context);
 
   return (
@@ -27,7 +27,9 @@ function Header(props) {
       <Link to="/contact">
         <button className="contact header-button">Contact</button>
       </Link>
-      <div className="cart">{cart.length}</div>
+      <div onClick={toggleCart} className="cart">
+        {cart.length}
+      </div>
     </header>
   );
 }

@@ -22,7 +22,6 @@ function Tea() {
   const closePopUp = () => setPopUp(null);
   const getPopUpInformation = (information) => {
     setPopUp(information);
-    console.log(popUp);
   };
 
   const nameSortingArrow = () => {

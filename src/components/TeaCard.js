@@ -15,12 +15,18 @@ function TeaCard({
   const [showFavButton, setShowFavButton] = useState(favorite ? true : false);
   const favoriteButton = favorite ? (
     <button
-      onClick={() => addToFavorites(id)}
+      onClick={(e) => {
+        e.stopPropagation();
+        addToFavorites(id);
+      }}
       style={{ backgroundImage: `url(${favoriteIcon})` }}
     ></button>
   ) : (
     <button
-      onClick={() => addToFavorites(id)}
+      onClick={(e) => {
+        e.stopPropagation();
+        addToFavorites(id);
+      }}
       style={{
         backgroundImage: `url(${notFavoriteIcon})`,
         opacity: showFavButton ? '1' : '0',
