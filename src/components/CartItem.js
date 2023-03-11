@@ -5,10 +5,6 @@ import '../styles/cart-item.css';
 
 function CartItem({ item: { name, category, price, quantity, source, id } }) {
   const { setCartItemValue, addToCart, removeFromCart } = useContext(Context);
-  const changeQty = (e) => {
-    const value = e.target.value;
-    value > quantity ? addToCart(id, value) : removeFromCart(id, value);
-  };
 
   return (
     <div className="cart-item">

@@ -41,9 +41,9 @@ function ContextProvider({ children }) {
     });
   };
   const removeFromCart = (id, qty = 1) => {
-    if (id === 'all') setCart([]);
     setCart((prevCart) => {
       const item = prevCart.find((tea) => tea.id === id);
+      if (id === 'all') return [];
       if (item.quantity > 1) {
         return prevCart.map((item) =>
           item.id === id ? { ...item, quantity: item.quantity - qty } : item
