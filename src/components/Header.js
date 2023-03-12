@@ -38,8 +38,8 @@ function Header({ toggleCart }) {
       <Link to="/tea">
         <button className="tea header-button">Tea</button>
       </Link>
-      <Link to="/contact">
-        <button className="contact header-button">Contact</button>
+      <Link to="/about">
+        <button className="about header-button">About</button>
       </Link>
       <div onClick={toggleCart} className="cart">
         {cartQuantity}

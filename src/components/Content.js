@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../Pages/Home';
 import Tea from '../Pages/Tea';
-import Contact from '../Pages/Contact';
+import About from '../Pages/About';
 import '../styles/content.css';
 
 function Content() {
@@ -11,7 +11,7 @@ function Content() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tea" element={<Tea />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );

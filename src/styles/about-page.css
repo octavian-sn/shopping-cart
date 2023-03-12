@@ -1,0 +1,21 @@
+.about-page {
+  padding: 25px 20%;
+  text-align: justify;
+  font-family: 'Roboto';
+  color: #7d532b;
+  letter-spacing: 0.7px;
+  line-height: 28px;
+}
+.about-page .design {
+  margin-bottom: 22px;
+}
+.about-page h2 {
+  border-bottom: 1px solid #7d532b5e;
+  font-family: 'Parisienne';
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+.about-page a {
+  color: #7d532b;
+}

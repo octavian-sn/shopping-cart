@@ -4,6 +4,16 @@
 
 ### Built with [React](https://reactjs.org/)
 
-### [Live preview](https://octavian-sn.github.io/shopping-cart/)
+## [Live preview](https://octavian-sn.github.io/shopping-cart/)
 
-![Screen-shot of the app!](./src/assets/screen.png)
+## Home Screen
+
+![Home screen](./src/assets/one.png)
+
+## Tea Screen
+
+![Tea screen](./src/assets/two.png)
+
+## Cart Screen
+
+![Cart screen](./src/assets/three.png)

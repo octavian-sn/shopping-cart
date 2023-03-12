@@ -13,13 +13,6 @@ function Cart({ toggleCart, showCart }) {
   const [subTotal, setSubTotal] = useState(0);
   const items = cart.map((item) => <CartItem key={item.id} item={item} />);
 
-  const test = () => console.log(calculateTotal());
-  const totalCost = 100.1;
-  const totalCostDisplay = totalCost.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
   useEffect(() => {
     calculateTotal();
   }, [cart]);
@@ -64,9 +57,7 @@ function Cart({ toggleCart, showCart }) {
       ></div>
       <div className={`cart-window ${showCart && 'active'}`}>
         <button className="back" onClick={closeCloseCart}></button>
-        <p onClick={test} className="title">
-          Shopping Cart
-        </p>
+        <p className="title">Shopping Cart</p>
         {cart.length > 0 ? (
           <div className="cart-not-empty">
             <div className="items">{items}</div>
