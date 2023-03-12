@@ -59,10 +59,10 @@ function About() {
             </p>
           </div>
           <br />
-          <p>
+          {/* <p>
             For any business inquiries, send me an{' '}
-            <a href="mailto: octavian.nicu.sulic@gmail.com">email</a>.
-          </p>
+            <a href="mailto: octavian.nicu.sulic@gmail.com">email</a>!
+          </p> */}
         </div>
       </FancyWindow>
     </>

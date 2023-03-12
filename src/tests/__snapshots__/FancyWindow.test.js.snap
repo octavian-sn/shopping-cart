@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FancyWindow component renders a continue button 1`] = `
+<div>
+  <div
+    class="fancy-window undefined"
+  >
+    <div
+      class="upper border"
+    />
+    <div
+      class="content"
+    />
+    <div
+      class="lower border"
+    />
+  </div>
+</div>
+`;

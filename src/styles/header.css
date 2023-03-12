@@ -7,6 +7,9 @@ header {
   background-color: #ede6d3;
   border: 1px solid rgba(125, 83, 43, 0.295);
   /* box-shadow: 0 12px 10px -5px #7d532b; */
+  /* position: sticky;
+  top: 0;
+  z-index: 10; */
 }
 /* Logo */
 header .app-logo {

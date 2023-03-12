@@ -4,10 +4,14 @@ import teaData from './assets/items';
 const Context = createContext();
 
 function ContextProvider({ children }) {
-  const [data, setData] = useState(teaData);
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem('eternitea-data')) || teaData
+  );
   // 'items' are displayed in the 'Tea' window
   const [items, setItems] = useState(data);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem('eternitea-cart')) || []
+  );
   const [filters, setFilters] = useState({
     favorite: false,
     black: false,
@@ -27,7 +31,11 @@ function ContextProvider({ children }) {
     filters.favorite === true &&
       setItems(data.filter((item) => item.favorite === true));
     filterIsOn() && reRenderFiltered();
+    localStorage.setItem('eternitea-data', JSON.stringify(data));
   }, [data]);
+  useEffect(() => {
+    localStorage.setItem('eternitea-cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (id, qty = 1) => {
     setCart((prevCart) => {
