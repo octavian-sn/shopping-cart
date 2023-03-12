@@ -6,6 +6,7 @@
   width: 100%;
   top: 0;
   transition: display 3s;
+  z-index: 2;
 }
 
 .cart-window {
@@ -17,6 +18,7 @@
   background-position-y: 300px;
   background-color: #f2eee1;
   position: absolute;
+  z-index: 2;
   top: 0;
   right: -390px;
   border: 2px solid rgba(125, 83, 43, 0.33);
@@ -68,6 +70,8 @@
 
 /* If cart has items in it */
 .cart-not-empty .items {
+  max-height: 500px;
+  overflow: auto;
   width: 100%;
   margin: 12px 0;
   border-bottom: 1px solid #7d532b81;
@@ -121,4 +125,5 @@
   position: absolute;
   top: 0;
   right: -390px;
+  z-index: 4;
 }

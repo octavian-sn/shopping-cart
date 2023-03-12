@@ -22,6 +22,15 @@ function Header({ toggleCart }) {
     setCartQuantity(number);
   }, [cart]);
 
+  useEffect(() => {
+    const header = document.querySelector('.header');
+    const observer = new IntersectionObserver(
+      ([e]) => e.target.classList.toggle('is-pinned', e.intersectionRatio < 1),
+      { threshold: [1] }
+    );
+    observer.observe(header);
+  }, []);
+
   return (
     <header className="header">
       <Link to="/">
