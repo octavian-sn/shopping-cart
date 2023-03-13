@@ -19,6 +19,7 @@ function Tea() {
   } = useContext(Context);
   const [popUp, setPopUp] = useState(null);
   const closePopUp = () => setPopUp(null);
+  // Gets information for popUp, sets it to state, thus opening the popUp
   const getPopUpInformation = (information) => {
     setPopUp(information);
   };
@@ -114,7 +115,7 @@ function Tea() {
           </div>
           <div className="cards">
             {items.map((tea) => (
-              <TeaCard key={tea.id} tea={tea} popUp={getPopUpInformation} />
+              <TeaCard key={tea.id} tea={tea} openPopUp={getPopUpInformation} />
             ))}
           </div>
         </div>

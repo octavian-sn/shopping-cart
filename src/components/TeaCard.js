@@ -8,7 +8,7 @@ import '../styles/tea-card.css';
 
 function TeaCard({
   tea: { name, category, price, id, description, source, favorite },
-  popUp,
+  openPopUp,
 }) {
   const { addToCart, addToFavorites } = useContext(Context);
 
@@ -43,7 +43,7 @@ function TeaCard({
       {/* Image side with title and fav button */}
       <div
         onClick={() =>
-          popUp({ name, description, category, price, source, id })
+          openPopUp({ name, description, category, price, source, id })
         }
         className="image"
         style={{ backgroundImage: `url(${source})` }}
@@ -61,8 +61,7 @@ function TeaCard({
 }
 
 TeaCard.propTypes = {
-  // name: PropTypes.isRequired,
-  // Add the rest
+  // name: PropTypes.string.isRequired,
 };
 
 export default TeaCard;

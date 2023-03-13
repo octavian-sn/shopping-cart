@@ -1,3 +1,15 @@
+/* Pop-up opened through search bar */
+#app .popup-overlay {
+  z-index: 4;
+  left: 0;
+  height: calc(100% + 66px);
+}
+#app .popup-overlay .fancy-window {
+  margin-top: 7%;
+}
+#app .pop-up .information .close {
+  top: 28px;
+}
 .popup-overlay {
   background-color: rgba(43, 24, 7, 0.48);
   position: absolute !important;
@@ -19,9 +31,8 @@
   padding: 2px;
   display: flex;
 }
+
 .pop-up img {
-  /* height: 247px;
-  width: 247px; */
   border: 3px solid #7d532b;
 }
 .pop-up .information {
