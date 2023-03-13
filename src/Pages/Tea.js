@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FancyWindow from '../components/FancyWindow';
 import PopUp from '../components/PopUp';
+import usePopUp from '../customHooks/usePopUp';
 import { Context } from '../Context';
 import { useContext } from 'react';
 import TeaCard from '../components/TeaCard';
@@ -17,12 +18,7 @@ function Tea() {
     sorting: { criteria, name, price },
     filters: { favorite, black, dark, green, oolong, white, yellow },
   } = useContext(Context);
-  const [popUp, setPopUp] = useState(null);
-  const closePopUp = () => setPopUp(null);
-  // Gets information for popUp, sets it to state, thus opening the popUp
-  const getPopUpInformation = (information) => {
-    setPopUp(information);
-  };
+  const { popUp, closePopUp, openPopUp } = usePopUp();
 
   const nameSortingArrow = () => {
     if (criteria === 'name' && name === 'ascending') return up;
@@ -115,7 +111,7 @@ function Tea() {
           </div>
           <div className="cards">
             {items.map((tea) => (
-              <TeaCard key={tea.id} tea={tea} openPopUp={getPopUpInformation} />
+              <TeaCard key={tea.id} tea={tea} openPopUp={openPopUp} />
             ))}
           </div>
         </div>

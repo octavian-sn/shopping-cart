@@ -55,7 +55,7 @@ function About() {
             <p>
               &emsp;&emsp;The development part took seven days and revolved
               around using tools such as React Router, React Hooks, Context,
-              propTypes, Default Props and React Testing Library.
+              propTypes, Default Props, Custom Hooks and React Testing Library.
             </p>
           </div>
           <br />
